@@ -22,19 +22,15 @@ export default function Home({allPosts}) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Hi. My name is Higor Tavares and I am a Software Enginner on Olx Brasil! 
-          I am focused on backEnd and also am learnign frontEnd for fun :3</p>
+          Greetings, I am Paulo. I work as a Software Engineer and have some knowledge about some technologies such Java,
+           Kotlin, Rust, Python, Go and Javascript. I like of "The Lord of Rings" and martial arts, I already trained Capoeira and Muay Thay, I like sports in General.
+           Despite this I will talk about just technology here.
+        </p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      {/* <section className={utilStyles.headingMd}>
-        <h2>Programing Skills</h2>
-        <p>
-        <Link href="/skills/rust">Rust</Link>
-        </p>
-      </section> */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
