@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Higor Tavares';
-export const siteTitle = 'About Me';
+export const siteTitle = 'Portfólio';
 
 export default function Layout({ children, home }) {
   return (
@@ -32,8 +32,8 @@ export default function Layout({ children, home }) {
               priority
               src="/images/profile.jpeg"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={200}
+              width={200}
               alt=""
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -61,7 +61,7 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
+          <Link href="/">← Voltar</Link>
         </div>
       )}
     </div>
