@@ -26,6 +26,26 @@ export default function Home({allPosts}) {
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Experiência</h2>
+        <ul className={utilStyles.list}>
+            <li className={utilStyles.listItem}>
+              OLX: Engenheiro de Software Pleno
+              <br />
+              <smal>Fevereiro de 2020 - Atual</smal>
+            </li>
+            <li className={utilStyles.listItem}>
+              Grupo Portfolio: Desenvolvedor de Software
+              <br />
+              <smal>Novembro de 2020 - Julho de 2021</smal>
+            </li>
+            <li className={utilStyles.listItem}>
+              Elevar commerce: Desenvolvedor de software
+              <br />
+              <smal>Julho de 2018 - Junho de 2020</smal>
+            </li>
+        </ul>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPosts.map(({ id, date, title }) => (

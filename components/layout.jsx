@@ -9,6 +9,7 @@ export const siteTitle = 'Portfólio';
 
 export default function Layout({ children, home }) {
   return (
+    <>
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
@@ -64,6 +65,22 @@ export default function Layout({ children, home }) {
           <Link href="/">← Voltar</Link>
         </div>
       )}
-    </div>
+      </div>
+      <footer className={styles.footer}>
+        <ul>
+          <li>
+          <Link href="https://www.linkedin.com/in/paulohtfreire">Linkedin</Link>
+          </li>
+          <li>
+          <Link href="https://github.com/higor-tavares">Github</Link>
+          </li>
+          <li>
+          </li>
+        </ul>
+        <div style={{'color': 'white', 'textAlign':'center'}}>
+        &copy; Nenhum direito reservado
+        </div>
+    </footer>
+    </>
   );
 }
