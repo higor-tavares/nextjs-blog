@@ -4,17 +4,20 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
 import Date from '../components/date';
+import { get } from '@vercel/edge-config';
 
 export async function getStaticProps() {
   const allPosts = getSortedPostsData();
+  const experience = await get('experience')
   return {
     props:{
-      allPosts
+      allPosts,
+      experience
     }
   }
 }
 
-export default function Home({allPosts}) {
+export default function Home({allPosts, experience}) {
   return (
     <Layout home>
       <Head>
@@ -28,21 +31,15 @@ export default function Home({allPosts}) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Experiência</h2>
         <ul className={utilStyles.list}>
-            <li className={utilStyles.listItem}>
-              OLX: Engenheiro de Software Pleno
+        {experience.map(({ id, title, company, startDate, endDate }) => (
+            <li className={utilStyles.listItem} key={id}>
+              ({company}) {title}
               <br />
-              <smal>Fevereiro de 2020 - Atual</smal>
+              <small className={utilStyles.lightText}>
+                {startDate} - {endDate}
+              </small>
             </li>
-            <li className={utilStyles.listItem}>
-              Grupo Portfolio: Desenvolvedor de Software
-              <br />
-              <smal>Novembro de 2020 - Julho de 2021</smal>
-            </li>
-            <li className={utilStyles.listItem}>
-              Elevar commerce: Desenvolvedor de software
-              <br />
-              <smal>Julho de 2018 - Junho de 2020</smal>
-            </li>
+          ))}
         </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
